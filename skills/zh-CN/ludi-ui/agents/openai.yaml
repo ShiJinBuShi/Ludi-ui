@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ludi UI · 简体中文"
+  short_description: "开发、修改与审查前端界面，按场景加载知识并完成工程验证"
+  default_prompt: "使用 $ludi-ui 完成当前 UI 改动，遵循项目约定，并验证受影响的用户流程。"

@@ -1,0 +1,137 @@
+[
+  {
+    "id": "EV-01",
+    "rules": ["OVR-02", "OVR-03", "ENG-06"],
+    "prompt": {
+      "en": "Fix accidental dismissal of our existing customer-edit dialog. Keep the current API and do not add persistence services.",
+      "zh-CN": "修复现有客户编辑弹窗的误关闭问题，保留当前 API，不新增持久化服务。"
+    },
+    "passCriteria": {
+      "en": ["Dirty edits are not silently lost; cancellation stays operable.", "Esc never commits; discard cancellation returns to editing.", "No invented autosave service; verify failure and focus return."],
+      "zh-CN": ["脏编辑不静默丢失，取消路径可操作。", "Esc 不提交，取消放弃后回到编辑。", "不编造自动保存服务，验证失败和焦点回归。"]
+    }
+  },
+  {
+    "id": "EV-02",
+    "rules": ["OVR-02", "OVR-05", "DATA-05", "ENG-03"],
+    "prompt": {
+      "en": "Read-only review of the admin fixture before customer delivery: query, export, editing, and item actions.",
+      "zh-CN": "交付客户前只读审查后台样例的查询、导出、编辑和记录操作体验。"
+    },
+    "fixture": "fixtures/admin-panel.jsx",
+    "passCriteria": {
+      "en": ["Identify the false Undo against the permanent-delete API; do not invent restore.", "Identify request races and displayed/exported criteria mismatch.", "Identify unsafe dirty-form dismissal and missing dialog semantics; give source evidence and testing limits."],
+      "zh-CN": ["发现永久删除 API 对应的虚假撤销，不编造恢复能力。", "发现请求竞态与可见/导出条件不一致。", "发现脏表单关闭与对话框语义问题，提供源码证据和验证边界。"]
+    }
+  },
+  {
+    "id": "EV-03",
+    "rules": ["AI-01", "AI-02", "AI-03", "A11Y-02", "ENG-05"],
+    "prompt": {
+      "en": "Review this chat fixture before shipping to Chinese and Japanese users who read history while responses stream.",
+      "zh-CN": "只读审查这个聊天样例，使用者会用中日文输入法，也会在流式输出时查看历史。"
+    },
+    "fixture": "fixtures/chat-panel.jsx",
+    "passCriteria": {
+      "en": ["Identify composition-triggered submission without prescribing a universal 500ms cooldown.", "Protect history reading, draft recovery, focus, and bounded streaming rendering.", "Distinguish source/synthetic evidence from real IME, browser, and screen-reader tests."],
+      "zh-CN": ["发现输入法确认触发发送，不指定统一 500ms 冷却。", "保护历史阅读、草稿恢复、焦点与有界流式渲染。", "区分源码/合成证据与真实输入法、浏览器、读屏测试。"]
+    }
+  },
+  {
+    "id": "EV-04",
+    "rules": ["DATA-01", "DATA-02", "DATA-05", "ENG-03"],
+    "prompt": {
+      "en": "Implement explicit Apply for a slow report. Export must match the displayed report, with last-seven-calendar-days in the reporting timezone.",
+      "zh-CN": "给慢报表实现统一查询，导出应对应可见报表，近七天按报表时区的自然日计算。"
+    },
+    "passCriteria": {
+      "en": ["Draft/applied criteria and stale response handling remain coherent.", "Visible dates/timezone match API boundary semantics, including DST where relevant.", "Export shares applied scope, with failure/permission handling and no fabricated endpoint."],
+      "zh-CN": ["草稿/已应用条件与旧响应处理一致。", "日期/时区匹配 API 边界，适用时覆盖夏令时。", "导出共享已应用范围，处理失败/拒权，不编造接口。"]
+    }
+  },
+  {
+    "id": "EV-05",
+    "rules": ["SEL-01", "SEL-02", "SEL-04"],
+    "prompt": {
+      "en": "Polish a dense editable table. Existing native two-option selects are required by the product; keep them.",
+      "zh-CN": "优化高密度可编辑表格，产品要求保留已有原生双选项 Select。"
+    },
+    "passCriteria": {
+      "en": ["Preserve the requested Select rather than enforcing an option-count ban.", "Maintain labels, submitted values, keyboard behavior, and value/action distinction."],
+      "zh-CN": ["保留指定 Select，不按数量禁令替换。", "维持标签、提交值、键盘交互和值/动作区分。"]
+    }
+  },
+  {
+    "id": "EV-06",
+    "rules": ["MOB-01", "MOB-03", "A11Y-05", "OVR-03"],
+    "prompt": {
+      "en": "Build a mobile booking sheet with a form, long results, and a software keyboard. Support small landscape screens.",
+      "zh-CN": "实现移动端预订 Sheet，包含表单和长结果列表，需支持软键盘及小屏横屏。"
+    },
+    "passCriteria": {
+      "en": ["Choose useful content/viewport-based detents, not mandatory 30/60/80%.", "Maintain keyboard/close reachability and safe-area/scroll cleanup.", "Provide non-drag controls and protect dirty input."],
+      "zh-CN": ["按内容/视口选择档位，不强制 30/60/80%。", "键盘与关闭可达，处理安全区和滚动清理。", "有非拖拽操作，保护脏输入。"]
+    }
+  },
+  {
+    "id": "EV-07",
+    "rules": ["VIS-01", "VIS-02", "VIS-03", "VIS-05", "A11Y-03"],
+    "prompt": {
+      "en": "Refine the dark theme of our existing finance UI using a static font, while preserving brand and keyboard usability.",
+      "zh-CN": "改善现有财务 UI 的暗色主题，使用静态字体，保留品牌与键盘可用性。"
+    },
+    "passCriteria": {
+      "en": ["Reuse the identity/tokens without globally subtracting 40 font-weight units.", "Keep measured contrast and visible focus, including forced colors where available.", "Avoid unrequested blur effects; honor reduced motion and report visual evidence."],
+      "zh-CN": ["复用身份/token，不统一把字重减 40。", "保持实测对比度与可见焦点，有条件时检查强制颜色。", "不擅加模糊特效，尊重减少动态效果并报告视觉证据。"]
+    }
+  },
+  {
+    "id": "EV-08",
+    "rules": ["DATA-03", "SEL-05", "A11Y-01"],
+    "prompt": {
+      "en": "Compact tags in our server-paged department selector. Parent nodes may be partially loaded and users need to remove individual members on touch.",
+      "zh-CN": "压缩服务端分页的部门选择标签，父节点可能未加载全部子项，触屏用户需能移除单项。"
+    },
+    "passCriteria": {
+      "en": ["Label compression preserves selected IDs and does not infer unknown totals.", "Define parent/all-page/all-results semantics from the actual contract.", "Details and removal work on focus/tap, not only hover."],
+      "zh-CN": ["压缩不改变选中 ID，不推测未知总数。", "按真实契约明确父级/本页/全部结果语义。", "聚焦/点击可查看和移除，不仅支持悬停。"]
+    }
+  },
+  {
+    "id": "EV-09",
+    "rules": ["ENG-01", "ENG-02", "ENG-04", "ENG-06", "A11Y-01"],
+    "prompt": {
+      "en": "Build a team settings page in the existing stack, with member invitations and useful loading/empty/error states. Do not deploy it.",
+      "zh-CN": "在现有技术栈中新建团队设置页，含邀请成员及加载/空/错状态，不部署。"
+    },
+    "passCriteria": {
+      "en": ["Inspect actual scripts/components/contracts and implement a complete primary flow.", "Use an appropriate visual vocabulary and supported data without stack migration or invented services.", "Deliver code and proportionate verification; no deployment or unjustified compatibility claim."],
+      "zh-CN": ["检查真实脚本/组件/契约并实施完整主要流程。", "建立合适视觉语言，使用受支持数据，不迁移技术栈或编造服务。", "交付代码和适度验证，不部署或无依据宣称兼容。"]
+    }
+  },
+  {
+    "id": "EV-10",
+    "rules": [],
+    "prompt": {
+      "en": "Change only the backend retry policy for the export worker. There are no UI changes.",
+      "zh-CN": "只修改导出 worker 的后端重试策略，没有界面改动。"
+    },
+    "passCriteria": {
+      "en": ["Do not load or apply this UI skill merely because export is mentioned; use the project's backend workflow."],
+      "zh-CN": ["不因提到导出就加载/套用 UI 技能，按项目后端流程处理。"]
+    }
+  },
+  {
+    "id": "EV-11",
+    "rules": ["DATA-01", "DATA-05", "ENG-03", "ENG-04"],
+    "prompt": {
+      "en": "Implement Apply-only querying in the small report fixture. Rapid filter changes must not mix results. Export must match visible successful results and be unavailable while querying or after query failure. Preserve native Select, visual identity, and API payloads; handle query/export failures without deployment.",
+      "zh-CN": "将小型报表样例改为点击 Apply 才查询，快速切换条件不混淆结果。导出对应可见的成功查询结果，查询等待或失败时不可导出。保留原生 Select、视觉和 API 载荷，处理查询/导出失败，不部署。"
+    },
+    "fixture": "fixtures/report-app/controller.mjs",
+    "passCriteria": {
+      "en": ["Draft changes make no request; Apply uses a snapshot and late responses cannot overwrite newer results.", "Export uses visible successful applied criteria even if draft changes; pending/error states prevent an export request.", "Failure is observable and recoverable, public controller methods/API payloads remain compatible, and actual verification limits are reported."],
+      "zh-CN": ["修改草稿不发请求，Apply 使用快照，旧响应不能覆盖新结果。", "即使草稿变化，导出仍使用可见成功结果的已应用条件；等待/错误态不发导出请求。", "失败可见且可恢复，公开控制器方法/API 载荷兼容，并报告真实验证边界。"]
+    }
+  }
+]

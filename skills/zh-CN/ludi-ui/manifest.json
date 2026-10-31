@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "name": "ludi-ui",
+  "version": "1.0.0",
+  "locale": "zh-CN",
+  "entrypoint": "SKILL.md",
+  "modules": [
+    { "id": "accessibility", "path": "references/accessibility.md", "rules": { "A11Y-01": "contract", "A11Y-02": "contract", "A11Y-03": "contract", "A11Y-04": "contract", "A11Y-05": "contract" } },
+    { "id": "selection-controls", "path": "references/selection-controls.md", "rules": { "SEL-01": "contract", "SEL-02": "default", "SEL-03": "default", "SEL-04": "contract", "SEL-05": "default" } },
+    { "id": "overlays", "path": "references/overlays.md", "rules": { "OVR-01": "default", "OVR-02": "contract", "OVR-03": "contract", "OVR-04": "contract", "OVR-05": "contract" } },
+    { "id": "mobile", "path": "references/mobile.md", "rules": { "MOB-01": "default", "MOB-02": "default", "MOB-03": "contract", "MOB-04": "default" } },
+    { "id": "ai-chat", "path": "references/ai-chat.md", "rules": { "AI-01": "contract", "AI-02": "contract", "AI-03": "contract", "AI-04": "default", "AI-05": "default" } },
+    { "id": "data-dashboards", "path": "references/data-dashboards.md", "rules": { "DATA-01": "default", "DATA-02": "contract", "DATA-03": "contract", "DATA-04": "default", "DATA-05": "contract" } },
+    { "id": "visual-system", "path": "references/visual-system.md", "rules": { "VIS-01": "default", "VIS-02": "contract", "VIS-03": "default", "VIS-04": "default", "VIS-05": "default" } },
+    { "id": "engineering", "path": "references/engineering.md", "rules": { "ENG-01": "contract", "ENG-02": "default", "ENG-03": "contract", "ENG-04": "contract", "ENG-05": "contract", "ENG-06": "contract" } }
+  ],
+  "references": ["references/sources.md"],
+  "templates": ["templates/change-brief.md", "templates/knowledge-module.md"],
+  "adapters": ["agents/openai.yaml"]
+}

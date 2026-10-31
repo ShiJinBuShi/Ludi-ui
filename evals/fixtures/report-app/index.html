@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Report evaluation fixture</title>
+  <style>
+    body { font: 1rem/1.5 system-ui; margin: 2rem; max-width: 60rem; }
+    button, select { font: inherit; padding: .5rem; margin: .25rem; }
+    :focus-visible { outline: 2px solid #185abd; outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Member report</h1>
+    <label for="status">Status</label>
+    <select id="status"><option value="all">All</option><option value="active">Active</option><option value="disabled">Disabled</option></select>
+    <button id="apply">Apply</button>
+    <button id="export">Export visible report</button>
+    <p id="feedback" role="status"></p>
+    <p id="criteria"></p>
+    <ul id="rows"></ul>
+  </main>
+  <script type="module" src="./main.mjs"></script>
+</body>
+</html>

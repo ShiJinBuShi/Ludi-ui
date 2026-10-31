@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ludi UI"
+  short_description: "Build and refine UI with engineering verification"
+  default_prompt: "Use $ludi-ui to implement the requested UI change, preserve the project's conventions, and verify the affected flow."
